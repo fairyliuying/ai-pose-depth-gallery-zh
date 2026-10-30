@@ -1,0 +1,7 @@
+services:
+  web:
+    build: .
+    image: ai-pose-depth-gallery-zh:latest
+    ports:
+      - "8080:80"
+    restart: unless-stopped

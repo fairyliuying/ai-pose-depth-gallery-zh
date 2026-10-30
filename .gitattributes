@@ -1,0 +1,19 @@
+# 统一换行符，避免 Windows / macOS 差异
+* text=auto eol=lf
+
+# 文本文件显式标记
+*.html text eol=lf
+*.css  text eol=lf
+*.js   text eol=lf
+*.json text eol=lf
+*.md   text eol=lf
+
+# 二进制资源，避免被当作文本处理或生成 diff
+*.png  binary
+*.jpg  binary
+*.jpeg binary
+*.gif  binary
+*.webp binary
+*.ico  binary
+*.woff binary
+*.woff2 binary

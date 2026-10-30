@@ -1,0 +1,13 @@
+# 构建上下文只需要站点运行时文件；.git 体积很大，必须排除
+.git
+.gitignore
+.gitattributes
+.editorconfig
+.nojekyll
+README.md
+Dockerfile
+.dockerignore
+docker-compose.yml
+
+# 元数据仅供维护参考，页面运行时不读取
+data/

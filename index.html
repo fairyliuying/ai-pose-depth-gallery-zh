@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="referrer" content="no-referrer">
+<meta name="description" content="POSE-DB-02 中文参考姿势深度图库：288 个姿势、1,439 张多角度人体模型深度图（depth），可按系列、分类、角度筛选。">
+<title>姿势 depth 集 POSE-DB-02 · 中文参考图库</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="hero">
+  <div class="hero-top">
+    <div class="eyebrow">POSE-DB-02 · 图像参考姿势集（depth）</div>
+    <nav class="infotabs" id="infotabs" aria-label="使用提示与注意事项">
+      <button type="button" class="itab" id="itab0" aria-haspopup="dialog" aria-expanded="false" aria-controls="ipanel0">使用提示</button>
+      <button type="button" class="itab" id="itab1" aria-haspopup="dialog" aria-expanded="false" aria-controls="ipanel1">注意事项</button>
+      <div class="ipanel" id="ipanel0" role="dialog" aria-labelledby="ipt0" tabindex="-1" hidden>
+        <div class="ipanel-hd"><h2 id="ipt0">使用提示</h2><button type="button" class="ipclose" aria-label="关闭">×</button></div>
+        <ul>
+          <li>这是深度图（depth，越白越靠前）。可载入各类 AI 工具的深度 / depth 参考功能。</li>
+          <li>同一姿势多角度连用，有助于生成图像或视频姿态更稳定。</li>
+          <li>下载原尺寸 PNG 可获得更清晰的细节参考。</li>
+          <li>画面不含脸部、服装、背景。请用提示词或其他参考图（如脸部参考）补充。</li>
+        </ul>
+      </div>
+      <div class="ipanel" id="ipanel1" role="dialog" aria-labelledby="ipt1" tabindex="-1" hidden>
+        <div class="ipanel-hd"><h2 id="ipt1">注意事项</h2><button type="button" class="ipclose" aria-label="关闭">×</button></div>
+        <ul>
+          <li>depth 是前后关系示意。手指、交叉腿等交界处可能较模糊。</li>
+          <li>可免费用于作品创作（含商用、编辑、参考）。</li>
+          <li>图像数据本身（含原尺寸与加工后）禁止再分发、转载、转售。</li>
+          <li><strong>禁止批量下载本库图像（含工具自动抓取），也禁止对已获取图像再分发、转载、销售。</strong>作为生成参考逐张使用仍可按原说明进行。</li>
+          <li>无需署名（自愿）。元数据已清除。按原样提供，不附带保证。</li>
+          <li>原图为人体模型姿势，并非真人。</li>
+          <li>请勿用于指代真人/未成年人，或违反公序良俗的用途。</li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+  <h1><span>姿势集</span> depth 数据库</h1>
+  <p class="sub">无脸灰色人体模型姿势的深度图（depth · 3:4）。越白越靠前。可对比正面、俯视、仰视、侧面、斜侧等角度。</p>
+  <p class="topnote">禁止批量下载（含自动抓取）以及再分发、转载、销售图像。</p>
+</header>
+
+<div class="tools"><div class="tools-in">
+  <div class="tabs" id="tabs" role="tablist"></div>
+  <div class="row2">
+    <label class="search"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+      <input id="q" type="search" placeholder="按姿势名 / ID / 分类搜索" autocomplete="off"></label>
+    <button class="ftog" id="ftog" aria-expanded="false">筛选<b id="fn"></b></button>
+    <div class="more" id="more">
+      <select id="cat" aria-label="分类"></select>
+      <div class="seg" id="ang" role="group" aria-label="角度"></div>
+      <div class="seg" id="view" role="group" aria-label="显示"><button data-v="pose" aria-pressed="true">按姿势</button><button data-v="card" aria-pressed="false">按单张</button></div>
+    </div>
+    <span class="count" id="count"></span>
+  </div>
+</div></div>
+
+<main><div class="grid" id="grid"></div></main>
+<footer id="foot">姿势 depth 集 POSE-DB-02 · 中文参考图库</footer>
+
+<div id="modal" class="modal" role="dialog" aria-modal="true" aria-label="放大查看">
+  <button class="close" id="mclose" aria-label="关闭">×</button>
+  <div class="mbox">
+    <div class="mimg"><img id="mimg" alt=""><button class="nav l" id="mprev" aria-label="上一角度">‹</button><button class="nav r" id="mnext" aria-label="下一角度">›</button></div>
+    <div class="mside">
+      <div><h2 id="mtitle"></h2><div class="id" id="mid"></div></div>
+      <div class="mang" id="mang"></div>
+      <dl class="kv" id="mkv"></dl>
+      <a class="dl" id="mdl" href="#" download>下载 depth（PNG）</a>
+      <div class="keys"><kbd>←</kbd><kbd>→</kbd> 切换角度　<kbd>↑</kbd><kbd>↓</kbd> 上一/下一姿势　<kbd>Esc</kbd> 关闭</div>
+    </div>
+  </div>
+</div>
+
+<script src="poses-data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
